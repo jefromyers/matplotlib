@@ -837,8 +837,8 @@ class Axes(_AxesBase):
         # Helper method to check that vals are not unitized
         for val, name in zip(vals, names):
             if not munits._is_natively_supported(val):
-                raise ValueError(f"{name} must be a single scalar value, "
-                                 f"but got {val}")
+                raise ValueError(f"{name!r} must be a single scalar value, "
+                                 f"but got {val!r}")
 
     @_docstring.dedent_interpd
     def axline(self, xy1, xy2=None, *, slope=None, **kwargs):
@@ -4416,7 +4416,7 @@ class Axes(_AxesBase):
                     # severe failure => one may appreciate a verbose feedback.
                     raise ValueError(
                         f"'c' argument must be a color, a sequence of colors, "
-                        f"or a sequence of numbers, not {c}") from err
+                        f"or a sequence of numbers, not {c!r}") from err
             else:
                 if len(colors) not in (0, 1, xsize):
                     # NB: remember that a single color is also acceptable.
