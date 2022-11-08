@@ -837,8 +837,8 @@ class Axes(_AxesBase):
         # Helper method to check that vals are not unitized
         for val, name in zip(vals, names):
             if not munits._is_natively_supported(val):
-                raise ValueError(f"{name!r} must be a single scalar value, "
-                                 f"but got {val!r}")
+                raise ValueError(f"{name} must be a single scalar value, "
+                                 f"but got {val}")
 
     @_docstring.dedent_interpd
     def axline(self, xy1, xy2=None, *, slope=None, **kwargs):
